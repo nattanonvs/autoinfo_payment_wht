@@ -1,0 +1,50 @@
+<odoo>
+    <!-- Menu + Action -->
+    <record id="action_wht_type" model="ir.actions.act_window">
+        <field name="name">WHT Types</field>
+        <field name="res_model">wht.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_wht_root"
+              name="Withholding Tax"
+              parent="account.menu_finance"
+              sequence="90"/>
+
+    <menuitem id="menu_wht_type"
+              name="WHT Types"
+              parent="menu_wht_root"
+              action="action_wht_type"
+              sequence="1"/>
+
+    <!-- Tree View -->
+    <record id="view_wht_type_tree" model="ir.ui.view">
+        <field name="name">wht.type.tree</field>
+        <field name="model">wht.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="percent"/>
+                <field name="account_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_wht_type_form" model="ir.ui.view">
+        <field name="name">wht.type.form</field>
+        <field name="model">wht.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="percent"/>
+                        <field name="account_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
