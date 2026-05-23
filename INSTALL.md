@@ -1,4 +1,4 @@
-## Auto Payment WHT (Odoo 15) — คู่มือติดตั้ง
+## AutoInfo Payment WHT (Odoo 15) — คู่มือติดตั้ง
 
 ### 1) สิ่งที่ต้องมี
 - Odoo 15
@@ -8,19 +8,22 @@
   - dtr_payment_invoice
 
 ### 2) ติดตั้งโมดูล (กรณีใช้งานบน Server)
-1. วางโฟลเดอร์โมดูล `auto_payment_wht` ไว้ใน addons path ของระบบ (เช่น `/var/odoo/custom15_autoinfo/`)
+1. วางโฟลเดอร์โมดูล `autoinfo_payment_wht` ไว้ใน addons path ของระบบ (เช่น `/var/odoo/custom15_autoinfo/`)
 2. ตรวจสอบว่า `addons_path` ในไฟล์ config ของ Odoo ชี้มาที่โฟลเดอร์ดังกล่าวแล้ว
 3. Restart service ของ Odoo
 4. เปิด Odoo → Apps
 5. เปิด Developer Mode (ถ้ายังไม่เปิด)
 6. กด “Update Apps List”
-7. ค้นหา `Auto Payment WHT` แล้วกด Install หรือ Upgrade (ถ้าติดตั้งไว้แล้ว)
+7. ค้นหา `AutoInfo Payment WHT` แล้วกด Install หรือ Upgrade (ถ้าติดตั้งไว้แล้ว)
 
 ### 3) ติดตั้งผ่านคำสั่ง (ทางเลือก)
 - Upgrade เฉพาะโมดูล:
-  - `-u auto_payment_wht`
+  - `-u autoinfo_payment_wht`
 - Upgrade พร้อม dependency (ถ้าต้องการ):
-  - `-u dtr_taxation,dtr_payment_invoice,auto_payment_wht`
+  - `-u dtr_taxation,dtr_payment_invoice,autoinfo_payment_wht`
+
+### หมายเหตุการเปลี่ยนชื่อโมดูล (สำคัญ)
+- ถ้าเคยติดตั้งชื่อเดิม `auto_payment_wht` มาก่อน ให้ถอนติดตั้ง (Uninstall) โมดูลเดิมก่อน แล้วค่อย Install `autoinfo_payment_wht`
 
 ### 4) วิธีใช้งาน (สรุป)
 1. ไปที่ Payments (Receive/Send Money)
