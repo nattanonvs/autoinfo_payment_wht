@@ -44,3 +44,12 @@
 - View: `views/account_payment_view.xml`
 - Security: `security/ir.model.access.csv`
 
+### 7) รายการที่ทำ (สรุปการแก้ไข)
+- ปรับให้ดึง invoice จาก `processing_invoice_ids` (dtr_payment_invoice) และสร้างรายการใน `WHT Invoices` อัตโนมัติ
+- เพิ่ม `WHT Invoices` ให้เลือกบางใบ/ติ๊ก `Apply WHT?` และแก้ไขฐานก่อน VAT ต่อใบด้วย `WHT Base Amount`
+- ทำให้แท็บ `Withholding Tax` (dtr_taxation) และ `WHT Summary` ใช้ฟิลด์ชุดเดียวกัน (`tax_id1/pay_amount1/wht_amount1`) และอัปเดตสอดคล้องกันอัตโนมัติ
+- คำนวณ WHT ด้วย `account.tax.compute_all()` เพื่อให้รองรับรูปแบบภาษีได้ถูกต้องกว่าใช้ percent ตรง ๆ
+- เพิ่ม `wht_net_received` เพื่อแสดงยอดฐาน - WHT และให้อัปเดตตามทันที
+- แก้ปัญหา error view inheritance โดยเปลี่ยนไป inherit จากฟอร์มของ `dtr_taxation` ที่มี `<notebook>` จริง
+- เพิ่มสิทธิ์ access สำหรับโมเดลใหม่ใน `security/ir.model.access.csv` และเพิ่ม dependency ใน `__manifest__.py`
+- เพิ่มไฟล์ประกอบการขึ้น Git (`README.md`, `.gitignore`) และเพิ่มคู่มือติดตั้งฉบับนี้
