@@ -53,3 +53,8 @@
 - แก้ปัญหา error view inheritance โดยเปลี่ยนไป inherit จากฟอร์มของ `dtr_taxation` ที่มี `<notebook>` จริง
 - เพิ่มสิทธิ์ access สำหรับโมเดลใหม่ใน `security/ir.model.access.csv` และเพิ่ม dependency ใน `__manifest__.py`
 - เพิ่มไฟล์ประกอบการขึ้น Git (`README.md`, `.gitignore`) และเพิ่มคู่มือติดตั้งฉบับนี้
+
+### Credits
+
+Development Team: The Auto-Info Co., Ltd. : Dev Team / Mr. Nattanon Vinyangkoon – Project conception, implementation, and thorough review of all deliverables.
+AI Coding Assistant: TRAE SOLO / MICROSOFT 365 COPILOT - Utilized to support code generation and productivity improvements under human oversight (e.g., suggesting code snippets and optimizations).
