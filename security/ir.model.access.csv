@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_payment_invoice_line_user,access.account.payment.invoice.line.user,model_account_payment_invoice_line,account.group_account_user,1,1,1,1
+access_wht_type_user,access.wht.type.user,model_wht_type,account.group_account_user,1,1,1,1

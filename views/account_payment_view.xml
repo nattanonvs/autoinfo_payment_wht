@@ -1,0 +1,57 @@
+<odoo>
+    <record id="view_account_payment_form_wht_inbound" model="ir.ui.view">
+        <field name="name">account.payment.form.wht.inbound</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="dtr_taxation.view_dtr_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="WHT Invoices">
+                    <field name="invoice_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                        <tree editable="bottom">
+                            <field name="invoice_id"/>
+                            <field name="amount_untaxed" readonly="1"/>
+                            <field name="base_amount"/>
+                            <field name="apply_wht"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="WHT Summary">
+                    <group>
+                        <field name="tax_id1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="pay_amount1" readonly="1"/>
+                        <field name="wht_amount1" readonly="1"/>
+                        <field name="wht_net_received" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_payment_form_wht_vendor" model="ir.ui.view">
+        <field name="name">account.payment.form.wht.vendor</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="dtr_taxation.view_dtr_account_payment_form_vendor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="WHT Invoices">
+                    <field name="invoice_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                        <tree editable="bottom">
+                            <field name="invoice_id"/>
+                            <field name="amount_untaxed" readonly="1"/>
+                            <field name="base_amount"/>
+                            <field name="apply_wht"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="WHT Summary">
+                    <group>
+                        <field name="tax_id1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="pay_amount1" readonly="1"/>
+                        <field name="wht_amount1" readonly="1"/>
+                        <field name="wht_net_received" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
