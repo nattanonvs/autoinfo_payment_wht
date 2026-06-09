@@ -4,13 +4,13 @@
 - Apps → search `AutoInfo Payment WHT` → Upgrade
 
 ### Update (Command Line)
-- `python odoo-bin -c C:\odoo\odoo-15.0\odoo.conf -d <db_name> -u autoinfo_payment_wht --stop-after-init`
+- `python3 /var/odoo/odoo15/odoo-bin -c /etc/odoo/odoo.conf -d <db_name> -u autoinfo_payment_wht --stop-after-init`
 
 ### Timeline & Change Log
 
 #### 15.0.1.1.0
 - 2026-06-07
-- Standardized module structure under `C:\odoo\APPreadytouse`
+- Standardized module structure for Linux deployments under `/var/odoo/custom15_autoinfo`
 - Added full documentation set under `docs/`
 - Updated owner/author and credits
 

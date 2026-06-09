@@ -7,10 +7,10 @@
   - dtr_taxation
   - dtr_payment_invoice
 
-### Install (Localhost / Windows)
+### Install (Linux Server)
 1. Copy module folder `autoinfo_payment_wht` into an addons path directory
-   - Recommended base path: `C:\odoo\APPreadytouse\autoinfo_payment_wht`
-2. Ensure `addons_path` contains `C:\odoo\APPreadytouse`
+   - Recommended base path: `/var/odoo/custom15_autoinfo/autoinfo_payment_wht`
+2. Ensure `addons_path` contains `/var/odoo/custom15_autoinfo`
 3. Restart Odoo (if running as service) or start `odoo-bin`
 4. In Odoo UI:
    - Apps → Update Apps List
@@ -19,5 +19,4 @@
 
 ### Install (Command Line)
 Example:
-- `python odoo-bin -c C:\odoo\odoo-15.0\odoo.conf -d <db_name> -i autoinfo_payment_wht --stop-after-init`
-
+- `python3 /var/odoo/odoo15/odoo-bin -c /etc/odoo/odoo.conf -d <db_name> -i autoinfo_payment_wht --stop-after-init`
