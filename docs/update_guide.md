@@ -2,9 +2,18 @@
 
 ### Update (Upgrade)
 - Apps → search `AutoInfo Payment WHT` → Upgrade
+- If Odoo runs as a service, restart service after code deployment
+- Example: `systemctl restart odoo`
 
 ### Update (Command Line)
 - `python3 /var/odoo/odoo15/odoo-bin -c /etc/odoo/odoo.conf -d <db_name> -u autoinfo_payment_wht --stop-after-init`
+
+### Recommended Update Flow (Linux)
+1. Deploy latest source to `/var/odoo/custom15_autoinfo/autoinfo_payment_wht`
+2. Verify ownership and permissions for the Odoo service user
+3. Restart Odoo service: `systemctl restart odoo`
+4. Run upgrade command if needed
+5. Validate payment form behavior in a test database before production rollout
 
 ### Timeline & Change Log
 

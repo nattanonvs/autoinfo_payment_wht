@@ -18,4 +18,4 @@
 ### User Level: Admin
 - Install/upgrade the module and verify dependencies are installed.
 - Verify access rights for accounting users.
-
+- On Linux deployments, confirm the server has been restarted or the module has been upgraded after each code change.

@@ -2,13 +2,21 @@
 
 โมดูลช่วยคำนวณภาษีหัก ณ ที่จ่ายจากใบ Invoice/Bill ที่เลือกบน Payment โดยรองรับการเลือกบางใบและแก้ไขฐานภาษี (ก่อน VAT) ต่อใบได้
 
+### Recommended Linux Deployment
+- Module path: `/var/odoo/custom15_autoinfo/autoinfo_payment_wht`
+- Addons root: `/var/odoo/custom15_autoinfo`
+- Odoo config example: `/etc/odoo/odoo.conf`
+- Odoo service example: `odoo`
+
 ### Dependencies
 - account
 - dtr_payment_invoice
 - dtr_taxation
 
 ### Installation
-ดูใน `docs/installation_guide.md`
+- ดูใน `docs/installation_guide.md`
+- ตัวอย่างคำสั่งติดตั้งบน Linux:
+  - `python3 /var/odoo/odoo15/odoo-bin -c /etc/odoo/odoo.conf -d <db_name> -i autoinfo_payment_wht --stop-after-init`
 
 ### Documentation
 - `docs/installation_guide.md`
