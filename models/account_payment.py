@@ -7,6 +7,11 @@ class AccountPaymentInvoiceLine(models.Model):
 
     payment_id = fields.Many2one("account.payment", ondelete="cascade")
     invoice_id = fields.Many2one("account.move", string="Invoice")
+    invoice_number = fields.Char(
+        compute="_compute_invoice_number",
+        store=True,
+        readonly=True,
+    )
     amount_untaxed = fields.Monetary(
         string="Untaxed Amount",
         related="invoice_id.amount_untaxed",
@@ -22,6 +27,11 @@ class AccountPaymentInvoiceLine(models.Model):
         store=True,
         readonly=True,
     )
+
+    @api.depends("invoice_id.name")
+    def _compute_invoice_number(self):
+        for line in self:
+            line.invoice_number = line.invoice_id.name or False
 
     @api.onchange("invoice_id")
     def _onchange_invoice_id_set_base_amount(self):
