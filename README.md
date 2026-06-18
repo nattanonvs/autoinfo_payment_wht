@@ -1,6 +1,12 @@
-## auto_payment_wht (Odoo 15)
+## autoinfo_payment_wht (Odoo 15)
 
 โมดูลช่วยคำนวณภาษีหัก ณ ที่จ่ายจากใบ Invoice/Bill ที่เลือกบน Payment โดยรองรับการเลือกบางใบและแก้ไขฐานภาษี (ก่อน VAT) ต่อใบได้
+
+### Recommended Linux Deployment
+- Module path: `/var/odoo/custom15_autoinfo/autoinfo_payment_wht`
+- Addons root: `/var/odoo/custom15_autoinfo`
+- Odoo config example: `/etc/odoo/odoo.conf`
+- Odoo service example: `odoo`
 
 ### Dependencies
 - account
@@ -8,5 +14,25 @@
 - dtr_taxation
 
 ### Installation
-ดูรายละเอียดใน [INSTALL.md](file:///c:/odoo/addons_arm_custom/auto_payment_wht/INSTALL.md)
+- ดูใน `docs/installation_guide.md`
+- ตัวอย่างคำสั่งติดตั้งบน Linux:
+  - `python3 /var/odoo/odoo15/odoo-bin -c /etc/odoo/odoo.conf -d <db_name> -i autoinfo_payment_wht --stop-after-init`
+
+### Documentation
+- `docs/installation_guide.md`
+- `docs/uninstallation_guide.md`
+- `docs/update_guide.md`
+- `docs/usage_guide.md`
+- `docs/configuration_guide.md`
+- `docs/troubleshooting.md`
+
+### Summary & Value
+- ลดงาน manual ในการคำนวณฐานภาษีหัก ณ ที่จ่ายจากหลายใบเอกสารบน Payment
+- รองรับกรณีจ่ายบางใบ/หักบางใบ พร้อมแก้ไขฐานก่อน VAT ต่อใบได้
+- ลดความเสี่ยงจากการคำนวณผิด/ลืมเลือกใบที่ต้องหัก ณ ที่จ่าย
+
+### Credits
+
+Development Team: The Auto-Info Co., Ltd. : Dev Team / Mr. Nattanon Vinyangkoon – Project conception, implementation, and thorough review of all deliverables.
+AI Coding Assistant: TRAE SOLO / MICROSOFT 365 COPILOT - Utilized to support code generation and productivity improvements under human oversight (e.g., suggesting code snippets and optimizations).
 
